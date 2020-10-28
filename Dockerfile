@@ -8,7 +8,7 @@ RUN apt-get update -y && apt-get install -y \
 RUN git clone https://github.com/nodejs/node.git
 
 WORKDIR /node
-RUN ./configure
+RUN ./configure --experimental-quic
 RUN make -j4
 
 CMD tail -f /dev/null
